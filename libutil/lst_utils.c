@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   20_lst_utils.c                                     :+:      :+:    :+:   */
+/*   lst_utils.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nfukuma <nfukuma@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/08 00:43:54 by nfukuma           #+#    #+#             */
-/*   Updated: 2022/08/18 23:50:36 by nfukuma          ###   ########.fr       */
+/*   Updated: 2022/08/23 15:10:38 by nfukuma          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libutil.h"
 
 t_stack	*new_node(int num)
 {
@@ -33,17 +33,6 @@ t_stack	*deltop_stk(t_stack *stk_top)
 	free(stk_top);
 	return (tmp);
 }
-//
-// void	delall_lst(t_stack	*node)
-// {
-// 	while (node->num != NULL)
-// 	{
-// 		node = node->nxt;
-// 		delone_lst(node->prv);
-// 	}
-// 	free(node);
-// 	return ;
-// }
 
 t_stack	*addfront_stk(t_stack *stk, t_stack *add_node)
 {
@@ -91,7 +80,7 @@ t_stack	*addback_stk(t_stack *stk, t_stack *add_node)
 void	show_stk(t_info *info)
 {
 	int z = 0;
-	t_stack *tmp = info->stk_a_top;
+	t_stack *tmp = info->stk_a;
 	printf("\nstk_a--------------\n");
 	while (1)
 	{
@@ -103,7 +92,7 @@ void	show_stk(t_info *info)
 		z++;
 	}
 	// z = 0;
-	// tmp = info->stk_a_top->prv->prv;
+	// tmp = info->stk_a->prv->prv;
 	// printf("\nre--------------\n");
 	// while (1)
 	// {
@@ -115,7 +104,7 @@ void	show_stk(t_info *info)
 	// 	z++;
 	// }
 	z = 0;
-	tmp = info->stk_b_top;
+	tmp = info->stk_b;
 	printf("\nstk_b--------------\n");
 	if (tmp == NULL)
 		return ;
@@ -129,7 +118,7 @@ void	show_stk(t_info *info)
 		z++;
 	}
 	// z = 0;
-	// tmp = info->stk_b_top->prv->prv;
+	// tmp = info->stk_b->prv->prv;
 	// printf("\nre--------------\n");
 	// while (1)
 	// {

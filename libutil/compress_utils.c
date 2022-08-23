@@ -1,16 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   10_compress_utils.c                                :+:      :+:    :+:   */
+/*   compress_utils.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nfukuma <nfukuma@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/10 00:20:40 by nfukuma           #+#    #+#             */
-/*   Updated: 2022/08/15 23:39:07 by nfukuma          ###   ########.fr       */
+/*   Updated: 2022/08/23 15:10:27 by nfukuma          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libutil.h"
+
+#include <stdio.h>
 
 static int	error_check_and_atoi(char *str);
 static void	error_check_dup(int *array, size_t count);
@@ -33,8 +35,6 @@ void	error_check_and_fill_stack(t_info *info)
 		error_check_dup(info->src_array, i);
 		i++;
 	}
-	if (info->sorted_flag == 1)
-		exit(0);
 	compression_and_fill_stack(info);
 	return ;
 }
@@ -94,7 +94,7 @@ static void	compression_and_fill_stack(t_info *info)
 		while (j < info->argc - 1)
 		{
 			if (info->src_array[i] == info->tmp_array[j])
-				info->stk_a_top = addback_stk(info->stk_a_top, new_node(j));
+				info->stk_a = addback_stk(info->stk_a, new_node(j));
 			j++;
 		}
 		i++;

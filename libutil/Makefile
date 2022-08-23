@@ -5,34 +5,42 @@
 #                                                     +:+ +:+         +:+      #
 #    By: nfukuma <nfukuma@student.42tokyo.jp>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/08/22 00:34:10 by nfukuma           #+#    #+#              #
-#    Updated: 2022/08/22 00:35:11 by nfukuma          ###   ########.fr        #
+#    Created: 2022/08/22 00:47:40 by nfukuma           #+#    #+#              #
+#    Updated: 2022/08/22 15:41:35 by nfukuma          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-PUSH_SWAP = push_swap
-CHECKER = checker
-PUSH_SWAP_DIR = ./push_swap_src
-CHECKER_DIR = ./checker_src
+NAME = libutil.a
 
-all:
-	make -C $(PUSH_SWAP_DIR)
-	cp $(PUSH_SWAP_DIR)/$(PUSH_SWAP) ./
-	make -C $(CHECKER_DIR)
-	cp $(CHECKER_DIR)/$(CHECKER) ./
+SRCDIR = ./
+SRCNAMES = $(shell echo *.c)
+SRCS = $(addprefix $(SRCDIR), $(SRCNAMES))
 
-clean:
-	make -C $(CHECKER_DIR) clean;
-	make -C $(PUSH_SWAP_DIR) clean;
 
-fclean:
-	make -C $(CHECKER_DIR) fclean;
-	make -C $(PUSH_SWAP_DIR) fclean;
-	rm -f $(PUSH_SWAP)
-	rm -f $(CHECKER)
+CFLAGS = -Wall -Wextra -Werror
+CC = gcc
 
-re: fclean all
+OBJDIR = ./obj/
+OBJS = $(SRCNAMES:%.c=$(OBJDIR)%.o)
 
-bonus : all
+all : $(OBJDIR) $(NAME)
+
+$(OBJDIR) :
+	mkdir -p obj
+
+$(OBJDIR)%.o : $(SRCDIR)%.c
+	$(CC) $(CFLAGS) -c -o $@ $<
+
+$(NAME):	$(OBJS)
+		ar rcs $@ $^
+
+clean :
+	rm -f $(OBJS)
+
+fclean : clean
+	rm -rf obj
+	rm -f $(NAME)
+
+re : fclean all
 
 .PHONY: all clean fclean re

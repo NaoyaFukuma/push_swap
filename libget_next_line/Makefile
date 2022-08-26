@@ -6,16 +6,14 @@
 #    By: nfukuma <nfukuma@student.42tokyo.jp>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/22 00:47:40 by nfukuma           #+#    #+#              #
-#    Updated: 2022/08/25 10:41:39 by nfukuma          ###   ########.fr        #
+#    Updated: 2022/08/26 23:30:43 by nfukuma          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libget_next_line.a
 
 SRCDIR = ./
-SRCNAMES = $(shell echo *.c)
-SRCS = $(addprefix $(SRCDIR), $(SRCNAMES))
-
+SRCNAMES = get_next_line.c get_next_line_utils.c
 
 CFLAGS = -Wall -Wextra -Werror
 CC = gcc
@@ -35,10 +33,9 @@ $(NAME):	$(OBJS)
 		ar rcs $@ $^
 
 clean :
-	rm -f $(OBJS)
+	rm -fr $(OBJDIR)
 
 fclean : clean
-	rm -rf obj
 	rm -f $(NAME)
 
 re : fclean all

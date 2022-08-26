@@ -6,14 +6,14 @@
 #    By: nfukuma <nfukuma@student.42tokyo.jp>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/07 21:29:21 by nfukuma           #+#    #+#              #
-#    Updated: 2022/08/25 10:44:24 by nfukuma          ###   ########.fr        #
+#    Updated: 2022/08/26 23:25:36 by nfukuma          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		= push_swap
 SRCDIR = ./
-SRCNAMES = $(shell echo *.c)
-SRCS = $(addprefix $(SRCDIR), $(SRCNAMES))
+SRCNAMES = chunk_util.c create_cmdlist.c main.c optimization_cmdlst.c optimization_util.c put_cmd_util.c sort_util_00.c sort_util_01.c sort_util_02.c sort_util_03.c sort_util_04.c
+# SRCS = $(addprefix $(SRCDIR), $(SRCNAMES))
 
 OBJDIR = ./obj/
 OBJS = $(SRCNAMES:%.c=$(OBJDIR)%.o)
@@ -42,14 +42,12 @@ clean:
 			make clean -C $(LIBDIR)
 			make clean -C $(UTILDIR)
 			make clean -C $(GET_NEXT_LINEDIR)
-			rm -f $(OBJS)
+			rm -rf obj
 
 fclean:		clean
-			make clean -C $(LIBDIR)
-			make clean -C $(UTILDIR)
-			make clean -C $(GET_NEXT_LINEDIR)
-			rm -f $(OBJS)
-			rm -rf obj
+			make fclean -C $(LIBDIR)
+			make fclean -C $(UTILDIR)
+			make fclean -C $(GET_NEXT_LINEDIR)
 			$(RM) $(NAME)
 
 re:			fclean all

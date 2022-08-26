@@ -6,7 +6,7 @@
 /*   By: nfukuma <nfukuma@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/23 14:53:05 by nfukuma           #+#    #+#             */
-/*   Updated: 2022/08/26 22:15:31 by nfukuma          ###   ########.fr       */
+/*   Updated: 2022/08/26 23:21:42 by nfukuma          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,9 +39,9 @@ void	harf_set_a_b(t_info *info, t_chunk **chunk)
 
 void	division_b_to_ander_5(t_info *info, t_chunk **chunk)
 {
-	int		pivot;
-	int		tmp_min;
-	int		tmp_max;
+	int	pivot;
+	int	tmp_min;
+	int	tmp_max;
 
 	pivot = (*chunk)->size / 2 - 1 + (*chunk)->min;
 	division_from_b_to_ander_5(info, *chunk, &tmp_min, &tmp_max);
@@ -54,109 +54,6 @@ void	division_b_to_ander_5(t_info *info, t_chunk **chunk)
 		*chunk = add_f_chunk(*chunk, new_chunk(tmp_min, pivot, 'b'));
 	}
 	return ;
-}
-
-void	chunk_size_1_or_2(t_info *info, t_chunk **chunk)
-{
-	if ((*chunk)->size == 1)
-	{
-		cmd_pa(info);
-		cmd_ra(info);
-		free_and_nxt(chunk);
-		return ;
-	}
-	if ((*chunk)->size == 2)
-	{
-		if (info->stk_b->num == (*chunk)->min)
-		{
-			cmd_pa(info);
-			cmd_ra(info);
-			cmd_pa(info);
-			cmd_ra(info);
-		}
-		else
-		{
-			cmd_pa(info);
-			cmd_pa(info);
-			cmd_ra(info);
-			cmd_ra(info);
-		}
-		free_and_nxt(chunk);
-		return ;
-	}
-}
-
-void	top_min(t_info *info, t_chunk **chunk)
-{
-	if (info->stk_b->nxt->num == (*chunk)->max)
-	{
-		cmd_pa(info);
-		cmd_ra(info);
-		cmd_pa(info);
-		cmd_pa(info);
-		cmd_ra(info);
-		cmd_ra(info);
-	}
-	else
-	{
-		cmd_pa(info);
-		cmd_ra(info);
-		cmd_pa(info);
-		cmd_ra(info);
-		cmd_pa(info);
-		cmd_ra(info);
-	}
-	free_and_nxt(chunk);
-	return ;
-}
-
-void	top_max(t_info *info, t_chunk **chunk)
-{
-	if (info->stk_b->nxt->num == (*chunk)->min)
-		{
-			cmd_pa(info);
-			cmd_pa(info);
-			cmd_ra(info);
-			cmd_pa(info);
-			cmd_ra(info);
-			cmd_ra(info);
-		}
-		else
-		{
-			cmd_pa(info);
-			cmd_pa(info);
-			cmd_pa(info);
-			cmd_ra(info);
-			cmd_ra(info);
-			cmd_ra(info);
-		}
-		free_and_nxt(chunk);
-		return ;
-}
-
-void	top_mid(t_info *info, t_chunk **chunk)
-{
-	if (info->stk_b->nxt->num == (*chunk)->min)
-		{
-			cmd_pa(info);
-			cmd_pa(info);
-			cmd_ra(info);
-			cmd_ra(info);
-			cmd_pa(info);
-			cmd_ra(info);
-		}
-		else
-		{
-			cmd_pa(info);
-			cmd_pa(info);
-			cmd_sa(info);
-			cmd_pa(info);
-			cmd_ra(info);
-			cmd_ra(info);
-			cmd_ra(info);
-		}
-		free_and_nxt(chunk);
-		return ;
 }
 
 void	chunk_size_3(t_info *info, t_chunk **chunk)
@@ -204,39 +101,5 @@ void	insert_a_bottom_from_b(t_info *info, t_chunk **chunk)
 		chunk_size_3(info, chunk);
 	else
 		chunk_size_else(info, chunk);
-	return ;
-}
-
-void	chunk_all_push_b(t_info *info, t_chunk **chunk, int tmp_min, int tmp_max)
-{
-	min_get_and_fix(info, chunk, &tmp_min, tmp_max);
-	free_and_nxt(chunk);
-	if (!(tmp_min > tmp_max))
-		*chunk = add_f_chunk(*chunk, new_chunk(tmp_min, tmp_max, 'b'));
-	return ;
-}
-
-void	insert_a_bottom_from_a_top(t_info *info, t_chunk **chunk)
-{
-	if (info->stk_a->num == (*chunk)->min)
-		ra_and_min_incre(info, *chunk);
-	while (1)
-	{
-		if (info->stk_b->num == (*chunk)->min)
-			cmd_pa(info);
-		if (info->stk_b->nxt->num == (*chunk)->min)
-			sb_pa(info);
-		if (info->stk_a->nxt->num == (*chunk)->min)
-			cmd_sa(info);
-		else if (info->stk_a->nxt->nxt->num == (*chunk)->min)
-			pb_sa(info);
-		else if (info->stk_a->nxt->nxt->nxt->num == (*chunk)->min)
-			pb_pb_sa(info);
-		if (info->stk_a->num == (*chunk)->min)
-			ra_and_min_incre(info, *chunk);
-		if ((*chunk)->min > (*chunk)->max)
-			break ;
-	}
-	free_and_nxt(chunk);
 	return ;
 }

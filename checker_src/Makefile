@@ -6,14 +6,13 @@
 #    By: nfukuma <nfukuma@student.42tokyo.jp>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/22 01:05:33 by nfukuma           #+#    #+#              #
-#    Updated: 2022/08/25 10:43:59 by nfukuma          ###   ########.fr        #
+#    Updated: 2022/08/26 23:27:52 by nfukuma          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = checker
 SRCDIR = ./
-SRCNAMES = $(shell echo *.c)
-SRCS = $(addprefix $(SRCDIR), $(SRCNAMES))
+SRCNAMES = main.c run_cmd_util.c
 
 OBJDIR = ./obj/
 OBJS = $(SRCNAMES:%.c=$(OBJDIR)%.o)
@@ -42,14 +41,12 @@ clean:
 			make clean -C $(LIBDIR)
 			make clean -C $(UTILDIR)
 			make clean -C $(GET_NEXT_LINEDIR)
-			rm -f $(OBJS)
+			rm -rf obj
 
 fclean:		clean
-			make clean -C $(LIBDIR)
-			make clean -C $(UTILDIR)
-			make clean -C $(GET_NEXT_LINEDIR)
-			rm -f $(OBJS)
-			rm -rf obj
+			make fclean -C $(LIBDIR)
+			make fclean -C $(UTILDIR)
+			make fclean -C $(GET_NEXT_LINEDIR)
 			$(RM) $(NAME)
 
 re:			fclean all

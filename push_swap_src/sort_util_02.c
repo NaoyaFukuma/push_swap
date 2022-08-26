@@ -6,13 +6,14 @@
 /*   By: nfukuma <nfukuma@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/23 16:49:18 by nfukuma           #+#    #+#             */
-/*   Updated: 2022/08/26 12:32:13 by nfukuma          ###   ########.fr       */
+/*   Updated: 2022/08/26 23:21:52 by nfukuma          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	division_from_b_to_ander_5(t_info *info, t_chunk *chunk, int *tmp_min, int *tmp_max)
+void	division_from_b_to_ander_5(t_info *info, t_chunk *chunk, int *tmp_min,
+		int *tmp_max)
 {
 	int	pivot;
 

@@ -6,7 +6,7 @@
 /*   By: nfukuma <nfukuma@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/23 00:51:02 by nfukuma           #+#    #+#             */
-/*   Updated: 2022/08/26 23:59:54 by nfukuma          ###   ########.fr       */
+/*   Updated: 2022/08/27 00:10:00 by nfukuma          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,8 +50,7 @@ t_stack				*addback_stk(t_stack *stk, t_stack *add_node);
 // in free_and_exit_utils.c
 void				put_error_and_exit(void);
 void				free_stk_and_cmdlist(t_info *info);
-void	swap(int *a, int *b, int *pl, int *pr)
-;
+void				swap(int *a, int *b, int *pl, int *pr);
 
 /* 22_cmd_utils.c */
 void				cmd_pa(t_info *info);

@@ -6,7 +6,7 @@
 /*   By: nfukuma <nfukuma@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/10 00:20:40 by nfukuma           #+#    #+#             */
-/*   Updated: 2022/08/27 00:05:30 by nfukuma          ###   ########.fr       */
+/*   Updated: 2022/08/27 00:10:21 by nfukuma          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,7 @@ static void	compression_and_fill_stack(t_info *info)
 		put_error_and_exit();
 	ft_memcpy(info->tmp_array, info->src_array, sizeof(int) * (info->argc - 1));
 	quick_sort(info->tmp_array, info->tmp_array[(0 + info->argc - 2) / 2], 0,
-			info->argc - 2);
+		info->argc - 2);
 	i = 0;
 	while (i < info->argc - 1)
 	{

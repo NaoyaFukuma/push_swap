@@ -6,7 +6,7 @@
 /*   By: nfukuma <nfukuma@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/24 01:04:22 by nfukuma           #+#    #+#             */
-/*   Updated: 2022/08/26 23:46:58 by nfukuma          ###   ########.fr       */
+/*   Updated: 2022/08/27 00:09:06 by nfukuma          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ void	chunk_size_1_or_2(t_info *info, t_chunk **chunk)
 			cmd_pa(info);
 			cmd_ra(info);
 		}
-			cmd_ra(info);
+		cmd_ra(info);
 		free_and_nxt(chunk);
 		return ;
 	}

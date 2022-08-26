@@ -6,7 +6,7 @@
 /*   By: nfukuma <nfukuma@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/11 01:41:15 by nfukuma           #+#    #+#             */
-/*   Updated: 2022/08/26 23:49:19 by nfukuma          ###   ########.fr       */
+/*   Updated: 2022/08/27 00:09:34 by nfukuma          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	cmd_pa(t_info *info)
 	char	*tmp;
 
 	info->stk_a = addfront_stk(info->stk_a,
-		new_node(info->stk_b->num));
+			new_node(info->stk_b->num));
 	info->stk_b = deltop_stk(info->stk_b);
 	cmd = ft_calloc(sizeof(char), 2);
 	if (cmd == NULL)
@@ -37,7 +37,7 @@ void	cmd_pb(t_info *info)
 	char	*tmp;
 
 	info->stk_b = addfront_stk(info->stk_b,
-		new_node(info->stk_a->num));
+			new_node(info->stk_a->num));
 	info->stk_a = deltop_stk(info->stk_a);
 	cmd = ft_calloc(sizeof(char), 2);
 	if (cmd == NULL)

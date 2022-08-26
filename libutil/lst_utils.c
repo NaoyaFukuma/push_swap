@@ -6,7 +6,7 @@
 /*   By: nfukuma <nfukuma@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/08 00:43:54 by nfukuma           #+#    #+#             */
-/*   Updated: 2022/08/25 12:35:03 by nfukuma          ###   ########.fr       */
+/*   Updated: 2022/08/26 23:50:31 by nfukuma          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,58 +75,4 @@ t_stack	*addback_stk(t_stack *stk, t_stack *add_node)
 		stk->prv->prv = add_node;
 	}
 	return (stk);
-}
-
-void	show_stk(t_info *info)
-{
-	int z = 0;
-	t_stack *tmp = info->stk_a;
-	printf("\nstk_a--------------\n");
-	while (1)
-	{
-		printf("stk_a[%d] num %d  sen %d\n", z, tmp->num, tmp->sentinel_flag);
-		if (tmp->sentinel_flag == 1)
-			break ;
-		tmp = tmp->nxt;
-		z++;
-	}
-	// z = 0;
-	// tmp = info->stk_a->prv->prv;
-	// printf("\nre--------------\n");
-	// while (1)
-	// {
-	// 	printf("stk_a[%d] num %d  sen %d\n", z, tmp->num, tmp->sentinel_flag);
-	// 	usleep(100000);
-	// 	if (tmp->sentinel_flag == 1)
-	// 		break ;
-	// 	tmp = tmp->prv;
-	// 	z++;
-	// }
-	z = 0;
-	tmp = info->stk_b;
-	printf("\nstk_b--------------\n");
-	if (tmp == NULL)
-		return ;
-	while (1)
-	{
-		printf("stk_b[%d] num %d  sen %d\n", z, tmp->num, tmp->sentinel_flag);
-		if (tmp->sentinel_flag == 1)
-			break ;
-		tmp = tmp->nxt;
-		z++;
-	}
-	// z = 0;
-	// tmp = info->stk_b->prv->prv;
-	// printf("\nre--------------\n");
-	// while (1)
-	// {
-	// 	printf("stk_b[%d] num %d  sen %d\n", z, tmp->num, tmp->sentinel_flag);
-	// 	// printf("stk_b nxt->[%d] num %d  sen %d\n", z, tmp->nxt->num, tmp->nxt->sentinel_flag);
-	// 	// printf("stk_b prv->[%d] num %d  sen %d\n", z, tmp->prv->num, tmp->prv->sentinel_flag);
-	// 	usleep(100000);
-	// 	if (tmp->sentinel_flag == 1)
-	// 		break ;
-	// 	tmp = tmp->prv;
-	// 	z++;
-	// }
 }

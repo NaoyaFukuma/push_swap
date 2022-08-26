@@ -6,7 +6,7 @@
 /*   By: nfukuma <nfukuma@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/11 15:41:37 by nfukuma           #+#    #+#             */
-/*   Updated: 2022/08/26 22:17:39 by nfukuma          ###   ########.fr       */
+/*   Updated: 2022/08/26 23:48:10 by nfukuma          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,9 +42,9 @@ void	ra_and_rb_to_rr(t_info *info, size_t i)
 {
 	size_t	j;
 
+	j = 1;
 	if (info->cmd_list[i] == _RA)
 	{
-		j = 1;
 		while (info->cmd_list[i + j] == _RB || info->cmd_list[i + j] == _RRB
 			|| info->cmd_list[i + j] == _SB || info->cmd_list[i + j] == _IGNORE)
 			j++;
@@ -56,7 +56,6 @@ void	ra_and_rb_to_rr(t_info *info, size_t i)
 	}
 	if (info->cmd_list[i] == _RB)
 	{
-		j = 1;
 		while (info->cmd_list[i + j] == _RA || info->cmd_list[i + j] == _RRA
 			|| info->cmd_list[i + j] == _SA || info->cmd_list[i + j] == _IGNORE)
 			j++;
@@ -72,9 +71,9 @@ void	rra_and_rrb(t_info *info, size_t i)
 {
 	size_t	j;
 
+	j = 1;
 	if (info->cmd_list[i] == _RRA)
 	{
-		j = 1;
 		while (info->cmd_list[i + j] == _RB || info->cmd_list[i + j] == _RRB
 			|| info->cmd_list[i + j] == _SB || info->cmd_list[i + j] == _IGNORE)
 			j++;
@@ -86,7 +85,6 @@ void	rra_and_rrb(t_info *info, size_t i)
 	}
 	if (info->cmd_list[i] == _RRB)
 	{
-		j = 1;
 		while (info->cmd_list[i + j] == _RA || info->cmd_list[i + j] == _RRA
 			|| info->cmd_list[i + j] == _SA || info->cmd_list[i + j] == _IGNORE)
 			j++;

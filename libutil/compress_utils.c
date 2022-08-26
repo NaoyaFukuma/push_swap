@@ -6,13 +6,11 @@
 /*   By: nfukuma <nfukuma@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/10 00:20:40 by nfukuma           #+#    #+#             */
-/*   Updated: 2022/08/23 15:10:27 by nfukuma          ###   ########.fr       */
+/*   Updated: 2022/08/27 00:05:30 by nfukuma          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libutil.h"
-
-#include <stdio.h>
 
 static int	error_check_and_atoi(char *str);
 static void	error_check_dup(int *array, size_t count);
@@ -106,7 +104,6 @@ static void	compression_and_fill_stack(t_info *info)
 
 static void	quick_sort(int *array, int pivot, int left, int right)
 {
-	int	tmp;
 	int	pl;
 	int	pr;
 
@@ -119,11 +116,7 @@ static void	quick_sort(int *array, int pivot, int left, int right)
 		while (array[pr] > pivot)
 			pr--;
 		if (pl <= pr)
-		{
-			tmp = array[pl];
-			array[pl++] = array[pr];
-			array[pr--] = tmp;
-		}
+			swap(&array[pl], &array[pr], &pl, &pr);
 		if (pl > pr)
 			break ;
 	}

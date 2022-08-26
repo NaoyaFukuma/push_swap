@@ -6,7 +6,7 @@
 /*   By: nfukuma <nfukuma@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/10 11:10:50 by nfukuma           #+#    #+#             */
-/*   Updated: 2022/08/26 12:44:37 by nfukuma          ###   ########.fr       */
+/*   Updated: 2022/08/26 23:45:05 by nfukuma          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,17 +74,12 @@ static void	push_b_few_num(t_info *info)
 			break ;
 		j = -1;
 		if (cost_r <= cost_rr)
-		{
 			while (++j < cost_r)
 				cmd_ra(info);
-			cmd_pb(info);
-		}
 		else
-		{
 			while (++j < cost_rr)
 				cmd_rra(info);
-			cmd_pb(info);
-		}
+		cmd_pb(info);
 	}
 }
 

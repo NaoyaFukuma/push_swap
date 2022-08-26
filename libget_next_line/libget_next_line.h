@@ -6,12 +6,12 @@
 /*   By: nfukuma <nfukuma@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/20 11:51:00 by nfukuma           #+#    #+#             */
-/*   Updated: 2022/08/25 16:38:12 by nfukuma          ###   ########.fr       */
+/*   Updated: 2022/08/26 23:43:13 by nfukuma          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
+#ifndef LIBGET_NEXT_LINE_H
+# define LIBGET_NEXT_LINE_H
 # include <stdlib.h>
 # include <unistd.h>
 

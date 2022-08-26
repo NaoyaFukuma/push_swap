@@ -6,19 +6,17 @@
 /*   By: nfukuma <nfukuma@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/23 00:51:02 by nfukuma           #+#    #+#             */
-/*   Updated: 2022/08/25 11:05:22 by nfukuma          ###   ########.fr       */
+/*   Updated: 2022/08/26 23:59:54 by nfukuma          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef UTIL_H
-# define UTIL_H
+#ifndef LIBUTIL_H
+# define LIBUTIL_H
 
 # include "../libft/libft.h"
 # include <limits.h>
 # include <stdbool.h>
 # include <stdlib.h>
-
-#include <stdio.h>
 
 typedef struct s_stack
 {
@@ -48,11 +46,12 @@ t_stack				*deltop_stk(t_stack *stk_top);
 void				delall_lst(t_stack *node);
 t_stack				*addfront_stk(t_stack *stk, t_stack *add_node);
 t_stack				*addback_stk(t_stack *stk, t_stack *add_node);
-void				show_stk(t_info *info);
 
 // in free_and_exit_utils.c
 void				put_error_and_exit(void);
-void	free_stk_and_cmdlist(t_info *info);
+void				free_stk_and_cmdlist(t_info *info);
+void	swap(int *a, int *b, int *pl, int *pr)
+;
 
 /* 22_cmd_utils.c */
 void				cmd_pa(t_info *info);

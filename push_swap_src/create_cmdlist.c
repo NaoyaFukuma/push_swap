@@ -6,7 +6,7 @@
 /*   By: nfukuma <nfukuma@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/10 11:10:50 by nfukuma           #+#    #+#             */
-/*   Updated: 2022/08/23 22:59:29 by nfukuma          ###   ########.fr       */
+/*   Updated: 2022/08/26 12:44:37 by nfukuma          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ void	create_cmd_list(t_info *info)
 		over_6_sort(info);
 	cmd_optimization(info);
 	cmd_optimization(info);
-	put_cmd(info);
 	return ;
 }
 
@@ -124,7 +123,7 @@ static void	over_6_sort(t_info *info)
 		if (chunk != NULL && chunk->stk == 'b' && chunk->size < 5)
 			insert_a_bottom_from_b(info, &chunk);
 		if (chunk != NULL && chunk->stk == 'a' && chunk->size >= 5)
-			chunk_all_push_b(info, &chunk);
+			chunk_all_push_b(info, &chunk, chunk->min, chunk->max);
 		if (chunk != NULL && chunk->stk == 'a' && chunk->size < 5)
 			insert_a_bottom_from_a_top(info, &chunk);
 		if (chunk == NULL)

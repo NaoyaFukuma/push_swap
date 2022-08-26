@@ -6,7 +6,7 @@
 /*   By: nfukuma <nfukuma@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/07 21:41:33 by nfukuma           #+#    #+#             */
-/*   Updated: 2022/08/23 15:10:38 by nfukuma          ###   ########.fr       */
+/*   Updated: 2022/08/25 11:05:33 by nfukuma          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ int	main(int argc, char **argv)
 	if (info.sorted_flag == 1)
 		exit(0);
 	create_cmd_list(&info);
+	put_cmd(&info);
+	free_stk_and_cmdlist(&info);
 	return (0);
 }
 

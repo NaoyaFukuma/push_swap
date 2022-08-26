@@ -6,7 +6,7 @@
 /*   By: nfukuma <nfukuma@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/23 16:49:18 by nfukuma           #+#    #+#             */
-/*   Updated: 2022/08/23 23:01:52 by nfukuma          ###   ########.fr       */
+/*   Updated: 2022/08/26 12:32:13 by nfukuma          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	division_from_b_to_ander_5(t_info *info, t_chunk *chunk, int *tmp_min, int 
 	*tmp_min = chunk->min;
 	*tmp_max = chunk->max;
 	pivot = chunk->size / 2 - 1 + chunk->min;
-	while (chunk->size-- > 0)
+	while (chunk->size-- > 0 && r_cost(info->stk_b, pivot + 1, *tmp_max) != -1)
 	{
 		if (info->stk_b->num == *tmp_min)
 		{

@@ -6,7 +6,7 @@
 /*   By: nfukuma <nfukuma@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/08 00:43:54 by nfukuma           #+#    #+#             */
-/*   Updated: 2022/08/23 15:10:38 by nfukuma          ###   ########.fr       */
+/*   Updated: 2022/08/25 12:35:03 by nfukuma          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,6 @@ void	show_stk(t_info *info)
 	while (1)
 	{
 		printf("stk_a[%d] num %d  sen %d\n", z, tmp->num, tmp->sentinel_flag);
-		usleep(50000);
 		if (tmp->sentinel_flag == 1)
 			break ;
 		tmp = tmp->nxt;
@@ -111,7 +110,6 @@ void	show_stk(t_info *info)
 	while (1)
 	{
 		printf("stk_b[%d] num %d  sen %d\n", z, tmp->num, tmp->sentinel_flag);
-		usleep(50000);
 		if (tmp->sentinel_flag == 1)
 			break ;
 		tmp = tmp->nxt;

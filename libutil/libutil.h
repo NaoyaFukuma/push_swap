@@ -6,7 +6,7 @@
 /*   By: nfukuma <nfukuma@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/23 00:51:02 by nfukuma           #+#    #+#             */
-/*   Updated: 2022/08/23 15:10:38 by nfukuma          ###   ########.fr       */
+/*   Updated: 2022/08/25 11:05:22 by nfukuma          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,6 @@ typedef struct s_info
 	t_stack			*stk_a;
 	t_stack			*stk_b;
 	char			*cmd_list;
-	char			*argv_cmd_list;
 	int				sorted_flag;
 	int				error_flag;
 }					t_info;
@@ -53,6 +52,7 @@ void				show_stk(t_info *info);
 
 // in free_and_exit_utils.c
 void				put_error_and_exit(void);
+void	free_stk_and_cmdlist(t_info *info);
 
 /* 22_cmd_utils.c */
 void				cmd_pa(t_info *info);

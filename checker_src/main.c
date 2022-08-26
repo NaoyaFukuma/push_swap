@@ -6,7 +6,7 @@
 /*   By: nfukuma <nfukuma@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/21 21:38:32 by nfukuma           #+#    #+#             */
-/*   Updated: 2022/08/26 14:25:25 by nfukuma          ###   ########.fr       */
+/*   Updated: 2022/08/26 23:38:18 by nfukuma          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,9 +74,9 @@ int	check_sorted(t_info *info)
 void	run_cmd(char *cmd, t_info *info)
 {
 	if (*cmd == 's')
-		cmd_swap_util(cmd ,info);
+		cmd_swap_util(cmd, info);
 	if (*cmd == 'r')
-		cmd_rotate_util(cmd ,info);
+		cmd_rotate_util(cmd, info);
 	if (*cmd == 'p')
-		cmd_push_util(cmd ,info);
+		cmd_push_util(cmd, info);
 }

@@ -6,7 +6,7 @@
 /*   By: nfukuma <nfukuma@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/10 00:20:40 by nfukuma           #+#    #+#             */
-/*   Updated: 2022/08/27 00:10:21 by nfukuma          ###   ########.fr       */
+/*   Updated: 2022/08/28 21:49:40 by nfukuma          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,8 @@ static int	error_check_and_atoi(char *str)
 	long	res;
 	int		sign_flag;
 
+	if (*str == '\0')
+		put_error_and_exit();
 	sign_flag = 1;
 	if (*str == '-')
 	{
